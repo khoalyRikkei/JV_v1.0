@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thực hành</title>
+        <style>
+            button {
+                margin: 30px;
+            }
+            .card {
+                border: 2px solid green;
+                padding: 20px;
+                margin: 20px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h2>Thực hành - Khai báo và sử dụng biến</h2>
+            <button onclick="onBai1()">Bài 1</button>
+            <button onclick="onBai2()">Bài 2</button>
+            <button onclick="onBai3()">Bài 3</button>
+        </div>
+        <div class="card">
+            <h2>Thực hành - Sử dụng toán tử</h2>
+            <button onclick="onBai4()">
+                Sử dụng toán tử tính diện tích hình chữ nhật
+            </button>
+        </div>
+
+        <script type="text/javascript">
+            function onBai1() {
+                let i = 10;
+                let f = 20.5;
+                let b = true;
+                let s = "Đà Nẵng";
+                document.write("i = " + i);
+                document.write("<br/>");
+                document.write("f = " + f);
+                document.write("<br/>");
+                document.write("b = " + b);
+                document.write("<br/>");
+                document.write("s = " + s);
+            }
+            function onBai2() {
+                let width = window.innerWidth;
+                let height = window.innerHeight;
+                document.write(
+                    "Kích thước màn hình web là: " +
+                        width +
+                        "x" +
+                        height +
+                        " (width x height)"
+                );
+            }
+            function onBai3() {
+                let a = parseFloat(prompt("Nhập A"));
+                let b = parseFloat(prompt("Nhập B"));
+
+                if (a % b == 0) {
+                    alert("A là bội số của B");
+                } else {
+                    alert("A là không là bội số của B");
+                }
+            }
+            function onBai4() {
+                let width = parseFloat(
+                    prompt("Nhập chiều rộng hình chữ nhật:")
+                );
+                let height = parseFloat(
+                    prompt("Nhập chiều dài hình chữ nhật:")
+                );
+
+                let area = (width * height).toFixed(2);
+                document.write(
+                    "Diện tích hình chữ nhật: " +
+                        area +
+                        " (làm tròn 2 số thập phân)"
+                );
+            }
+        </script>
+    </body>
+</html>
