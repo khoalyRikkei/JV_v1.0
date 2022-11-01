@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thực hành</title>
+        <style>
+            button {
+                margin: 30px;
+            }
+            .card {
+                border: 2px solid green;
+                padding: 20px;
+                margin: 20px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h2>Thực hành - Kiểm tra năm nhuân</h2>
+            <button onclick="onBai1()">Enter Year</button>
+        </div>
+        <div class="card">
+            <h2>Thực hành - Luyện tập cấu trúc if - else</h2>
+            <button onclick="onBai2()">Click me!</button>
+        </div>
+        <div class="card">
+            <h2>Thực hành - Luyện tập cấu trúc if - else if</h2>
+            <button onclick="onBai3()">Click me!</button>
+        </div>
+        <div class="card">
+            <h2>Thực hành - Cấu trúc Switch - case</h2>
+            <select id="browser">
+                <option>--Select browser that you want test--</option>
+                <option>Edge</option>
+                <option>Chrome</option>
+                <option>Firefox</option>
+                <option>Safari</option>
+                <option>Opera</option>
+            </select>
+            <button onclick="onBai4()">Test</button>
+            <br />
+            <button onclick="onBai5()">Bài 2</button>
+        </div>
+
+        <script type="text/javascript">
+            function onBai1() {
+                let year = parseInt(prompt("Enter a year"));
+                let isLeapYear = false;
+                if (year % 4 == 0) {
+                    if (year % 100 == 0) {
+                        if (year % 400 == 0) {
+                            isLeapYear = true;
+                        }
+                    } else {
+                        isLeapYear = true;
+                    }
+                }
+                if (isLeapYear) {
+                    alert(year + " is a leap year");
+                } else {
+                    alert(year + " is NOT a leap year");
+                }
+            }
+            function onBai2() {
+                let userName = prompt("Who's there?", "");
+                if (userName == "Admin") {
+                    let pass = prompt("Password?", "");
+                    if (pass == "TheMaster") {
+                        alert("Welcome!");
+                    } else if (pass == null) {
+                        alert("Canceled.");
+                    } else {
+                        alert("Wrong password");
+                    }
+                } else if (userName == null) {
+                    alert("Canceled");
+                } else {
+                    alert("I don't know you");
+                }
+            }
+            function onBai3() {
+                let userName = prompt("Who's there?", "");
+                if (userName == "Admin") {
+                    let pass = prompt("Password?", "");
+                    if (pass == "TheMaster") {
+                        alert("Welcome!");
+                    } else if (pass == null) {
+                        alert("Canceled.");
+                    } else {
+                        alert("Wrong password");
+                    }
+                } else if (userName == null) {
+                    alert("Canceled");
+                } else {
+                    alert("I don't know you");
+                }
+            }
+            function onBai4() {
+                const browser = document.querySelector("#browser").value;
+
+                switch (browser) {
+                    case "Edge":
+                        alert("You've got the Edge!");
+                        break;
+                    case "Chrome":
+                    case "Firefox":
+                    case "Safari":
+                    case "Opera":
+                        alert("Okay we support these browsers too");
+                        break;
+                    default:
+                        alert(
+                            "Not browser selected, We hope that this page looks ok!"
+                        );
+                }
+            }
+            function onBai5() {
+                let value = prompt("Type a number", 0);
+
+                // switch (value) {
+                //     case value > 0:
+                //         alert(1);
+                //         break;
+                //     case value < 0:
+                //         alert(-1);
+                //         break;
+                //     default:
+                //         alert(0);
+                //         break;
+                // }
+            }
+        </script>
+    </body>
+</html>
