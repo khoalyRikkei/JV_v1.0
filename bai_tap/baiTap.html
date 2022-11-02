@@ -15,6 +15,7 @@
                 margin: 20px;
                 border-radius: 5px;
                 flex: 1;
+                min-width: 25%;
             }
             body {
                 padding: 50px;
@@ -45,12 +46,42 @@
                     height="100"
                     width="80"
                 />
-                <p>Use arrow of press key</p>
+                <p>Use arrow of keyboard</p>
             </form>
         </div>
         <div class="card">
             <h2>Bài tập - Tính chỉ số cân nặng</h2>
-            <button onclick="baitap()">Clcik me!</button>
+            <button onclick="baitap1()">Click me!</button>
+        </div>
+        <div class="card">
+            <h2>Bài tập - Tính số ngày của tháng</h2>
+            <input
+                type="number"
+                id="month"
+                min="1"
+                max="12"
+                placeholder="Nhập tháng (số)"
+                style="width: 120px"
+            />
+            <button onclick="baitap2()">Click me!</button>
+        </div>
+        <div class="card">
+            <h2>Bài tập - Máy tính đơn giản</h2>
+
+            <a href="./calculator.html">Click to link</a>
+        </div>
+
+        <div class="card">
+            <h2>Bài tập - Game Puzzle</h2>
+            <a href="./gamePuzzle.html">Click to link</a>
+        </div>
+        <div class="card">
+            <h2>Bài tập - Do you love me?</h2>
+            <a href="./loveMe.html">Click to link</a>
+        </div>
+        <div class="card">
+            <h2>Bài tập - Fast - Good = Cheap?</h2>
+            <a href="./goodFastCheap.html">Click to link</a>
         </div>
         <script>
             // Move ball by click mouse
@@ -105,7 +136,7 @@
 
             //Tính cân nặng
 
-            function baitap() {
+            function baitap1() {
                 let w = prompt("Nhập cân nặng:");
                 let h = prompt("Nhập chiều cao:");
                 let bmi = w / (h * h);
@@ -113,6 +144,39 @@
                 else if (bmi < 25.0) alert("Normal");
                 else if (bmi < 30.0) alert("Overweight");
                 else alert("Obese");
+            }
+
+            //Tính số ngày của tháng
+            function baitap2() {
+                const value = parseFloat(
+                    document.getElementById("month").value
+                );
+                let days;
+                switch (value) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        days = 31;
+                        break;
+                    case 2:
+                        days = "28 or 29 days";
+                        break;
+
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        days = 30;
+                        break;
+                    default:
+                        days = "Please enter a month";
+                        break;
+                }
+                return alert("Này của tháng: " + days);
             }
         </script>
     </body>
